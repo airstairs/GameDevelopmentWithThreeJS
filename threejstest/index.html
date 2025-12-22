@@ -12,6 +12,10 @@
 		<script src="js/three.min.js"></script>
 
 		<script>
+
+			let step = 0.01;
+			let direction = -1;
+
 			// 1. Create a scene
 			const scene = new THREE.Scene();
 
@@ -42,14 +46,19 @@
 				cube.rotation.x += 0.01;
 				cube.rotation.y += 0.01;
 
-				renderer.render(scene, camera);
+				camera.position.z += step*direction;
+				console.log(camera.position.z);
 
-				camera.position.z -= 0.01
-
-				if (camera.position.z < 2) {
-					camera.position.z = 20;
+				if (camera.position.z >= 8) {
+					camera.position.z = 8;
+					direction =-1;
+				} else if (camera.position.z <= 2) {
+					camera.position.z = 2.1;
+					direction = 1;
 				}
-			}
+
+				renderer.render(scene, camera);
+				}
 
 			// Handle window resize for responsiveness
 			window.addEventListener('resize', () => {
