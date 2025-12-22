@@ -43,6 +43,12 @@
 				cube.rotation.y += 0.01;
 
 				renderer.render(scene, camera);
+
+				camera.position.z -= 0.01
+
+				if (camera.position.z < 2) {
+					camera.position.z = 20;
+				}
 			}
 
 			// Handle window resize for responsiveness
