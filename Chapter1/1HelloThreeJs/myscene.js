@@ -15,7 +15,7 @@ document.body.appendChild(renderer.domElement);
 
 // 4. Create a 3D object (a cube)
 const geometry = new THREE.BoxGeometry(1, 1, 1);
-const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 }); // Green material
+const material = new THREE.MeshNormalMaterial({ color: 0x00ff00 }); // Green material
 const cube = new THREE.Mesh(geometry, material);
 scene.add(cube);
 
