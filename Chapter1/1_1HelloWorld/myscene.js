@@ -7,7 +7,7 @@ geometry = new THREE.IcosahedronGeometry(200, 1);
 
 
 material = new THREE.MeshNormalMaterial({ 
-	color: 0x000000, wireframe: true, wireframeLinewidth: 2
+	wireframe: true, wireframeLinewidth: 4
 });
 mesh = new THREE.Mesh(geometry, material);
 
